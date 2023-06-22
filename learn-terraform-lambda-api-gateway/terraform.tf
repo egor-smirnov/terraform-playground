@@ -3,11 +3,11 @@
 
 terraform {
 
-  cloud {
+  /*cloud {
     workspaces {
       name = "learn-terraform-lambda-api-gateway"
     }
-  }
+  }*/
 
   required_providers {
     aws = {

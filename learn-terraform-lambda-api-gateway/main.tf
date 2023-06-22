@@ -22,6 +22,15 @@ resource "aws_s3_bucket" "lambda_bucket" {
 }
 
 resource "aws_s3_bucket_acl" "bucket_acl" {
+  depends_on = [aws_s3_bucket_ownership_controls.bucket_acl_ownership]
+
   bucket = aws_s3_bucket.lambda_bucket.id
   acl    = "private"
+}
+
+resource "aws_s3_bucket_ownership_controls" "bucket_acl_ownership" {
+  bucket = aws_s3_bucket.lambda_bucket.id
+  rule {
+    object_ownership = "BucketOwnerPreferred"
+  }
 }
