@@ -2,11 +2,11 @@
 # SPDX-License-Identifier: MPL-2.0
 
 terraform {
-  cloud {
+  /*cloud {
     workspaces {
       name = "learn-terraform-aws-iam-policy"
     }
-  }
+  }*/
 
   required_providers {
     aws = {
@@ -14,5 +14,5 @@ terraform {
       version = "4.15.0"
     }
   }
-  required_version = "~> 1.2.0"
+  required_version = ">= 1.2.0"
 }
